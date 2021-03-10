@@ -14,7 +14,8 @@ namespace Homework_Workshop_Week5
             {
                 if (positionX >= 0)
                 {
-                    double t = Math.Sqrt(positionY)+1; //t ไม่น้อยกว่า 0
+                    double t1 = Math.Sqrt(positionY)+1;
+                    double t2 = (-1*Math.Sqrt(positionY))+1;
                     double p = Math.Pow((positionX - 1),2);
                     if(mode == "time")
                     {
@@ -22,7 +23,15 @@ namespace Homework_Workshop_Week5
                     }
                     else if(mode == "price")
                     {
-                        Console.WriteLine("{0},{1}", t, positionY);
+                        double tbar = (t1 + t2) / 2;
+                        if (positionX >= tbar)
+                        {
+                            Console.WriteLine("{0},{1}", t1, positionY);
+                        }
+                        else
+                        {
+                            Console.WriteLine("{0},{1}", t2, positionY);
+                        }
                     }
                 }
                 else
